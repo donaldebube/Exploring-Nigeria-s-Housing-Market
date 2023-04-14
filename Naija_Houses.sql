@@ -14,5 +14,6 @@ EXEC sp_rename 'NaijaHouses.price', 'Price', 'COLUMN';
 SELECT TOP 10 *
 FROM NaijaHouses
 
-SELECT COUNT(DISTINCT bedrooms) AS 'Number of Bedrooms'
+SELECT COUNT(bedrooms) AS 'Number of Bedrooms'
 FROM NaijaHouses
+WHERE Bedrooms = 5
