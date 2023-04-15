@@ -17,3 +17,9 @@ FROM NaijaHouses
 SELECT COUNT(bedrooms) AS 'Number of Bedrooms'
 FROM NaijaHouses
 WHERE Bedrooms = 5
+GO
+
+SELECT DISTINCT Title, COUNT(Title) AS 'Total Number'
+FROM NaijaHouses
+GROUP BY Title
+GO
