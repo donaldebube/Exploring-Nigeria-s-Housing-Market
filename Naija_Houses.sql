@@ -103,6 +103,10 @@ GROUP BY [Building Types]
 ORDER BY 'Number of Bedrooms' DESC
 GO
 
+SELECT  Toilets
+FROM NaijaHouses
+GO
+
 -- List of towns with their respective numbers
 SELECT DISTINCT [Town], COUNT([Town]) AS 'Number of Towns'
 FROM NaijaHouses
