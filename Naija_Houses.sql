@@ -175,9 +175,6 @@ GROUP BY Toilets, [Building Types]
 ORDER BY 'Number of Toilets' DESC
 GO
 
-
-
-
 -- List of towns with their respective numbers
 SELECT DISTINCT [Town], COUNT([Town]) AS 'Number of Towns'
 FROM NaijaHouses
