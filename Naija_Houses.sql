@@ -33,5 +33,11 @@ GROUP BY Town
 ORDER BY 'Number of Towns' DESC
 GO
 
+-- List of states with their respective numbers
+SELECT State, COUNT(State) AS 'Number of States'
+FROM NaijaHouses
+GROUP BY State
+ORDER BY 'Number of States' DESC
+GO
 
 
