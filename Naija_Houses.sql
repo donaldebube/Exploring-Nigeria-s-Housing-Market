@@ -40,8 +40,13 @@ ORDER BY 'Number of States' DESC
 GO
 
 -- List of building types with their respective prices
-SELECT DISTINCT TOP 20 [Building Types], Price, State, Town, [Parking Space]
+SELECT DISTINCT TOP 20 [Building Types], Price
 FROM NaijaHouses
--- GROUP BY [Building Types]
 ORDER BY 'Price' DESC
 
+-- List of most expensive buildings with their respective locations
+SELECT DISTINCT TOP 20 [Building Types], COUNT(Price) AS 'Price'
+FROM NaijaHouses
+GROUP BY [Building Types]
+
+samuel.davies@zenithbank.com
