@@ -15,7 +15,6 @@ SELECT TOP 10 *
 FROM NaijaHouses
 GO
 
-
 -- Number of bedrooms for each category of bedrooms present
 SELECT DISTINCT Bedrooms, COUNT(Bedrooms) AS 'Number of Bedrooms'
 FROM NaijaHouses
