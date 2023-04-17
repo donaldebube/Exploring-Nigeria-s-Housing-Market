@@ -31,6 +31,38 @@ FROM NaijaHouses
 GROUP BY Bedrooms
 ORDER BY 'Number of Bedrooms' DESC
 
+-- Building Types by NUmber of Bedrooms, where number of bedroooms is 9
+SELECT [Building Types], COUNT(Bedrooms) AS 'Number of Bedrooms'
+FROM NaijaHouses
+WHERE Bedrooms = 9 
+GROUP BY [Building Types]
+ORDER BY 'Number of Bedrooms' DESC
+GO
+
+-- Building Types by NUmber of Bedrooms, where number of bedroooms is 8
+SELECT [Building Types], COUNT(Bedrooms) AS 'Number of Bedrooms'
+FROM NaijaHouses
+WHERE Bedrooms = 8 
+GROUP BY [Building Types]
+ORDER BY 'Number of Bedrooms' DESC
+GO
+
+-- Building Types by NUmber of Bedrooms, where number of bedroooms is 7
+SELECT [Building Types], COUNT(Bedrooms) AS 'Number of Bedrooms'
+FROM NaijaHouses
+WHERE Bedrooms = 7
+GROUP BY [Building Types]
+ORDER BY 'Number of Bedrooms' DESC
+GO
+
+-- Building Types by NUmber of Bedrooms, where number of bedroooms is 6
+SELECT [Building Types], COUNT(Bedrooms) AS 'Number of Bedrooms'
+FROM NaijaHouses
+WHERE Bedrooms = 6
+GROUP BY [Building Types]
+ORDER BY 'Number of Bedrooms' DESC
+GO
+
 -- Building Types by NUmber of Bedrooms, where number of bedroooms is 5
 SELECT [Building Types], COUNT(Bedrooms) AS 'Number of Bedrooms'
 FROM NaijaHouses
@@ -43,6 +75,30 @@ GO
 SELECT [Building Types], COUNT(Bedrooms) AS 'Number of Bedrooms'
 FROM NaijaHouses
 WHERE Bedrooms = 4 
+GROUP BY [Building Types]
+ORDER BY 'Number of Bedrooms' DESC
+GO
+
+-- Building Types by NUmber of Bedrooms, where number of bedroooms is 3
+SELECT [Building Types], COUNT(Bedrooms) AS 'Number of Bedrooms'
+FROM NaijaHouses
+WHERE Bedrooms = 3
+GROUP BY [Building Types]
+ORDER BY 'Number of Bedrooms' DESC
+GO
+
+-- Building Types by NUmber of Bedrooms, where number of bedroooms is 2
+SELECT [Building Types], COUNT(Bedrooms) AS 'Number of Bedrooms'
+FROM NaijaHouses
+WHERE Bedrooms = 2
+GROUP BY [Building Types]
+ORDER BY 'Number of Bedrooms' DESC
+GO
+
+-- Building Types by NUmber of Bedrooms, where number of bedroooms is 1
+SELECT [Building Types], COUNT(Bedrooms) AS 'Number of Bedrooms'
+FROM NaijaHouses
+WHERE Bedrooms = 1
 GROUP BY [Building Types]
 ORDER BY 'Number of Bedrooms' DESC
 GO
