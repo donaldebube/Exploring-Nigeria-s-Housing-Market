@@ -40,7 +40,7 @@ ORDER BY 'Number of States' DESC
 GO
 
 -- List of building types with their respective prices
-SELECT DISTINCT TOP 20 [Building Types], Price, State
+SELECT DISTINCT TOP 20 [Building Types], Price, State, Town, [Parking Space]
 FROM NaijaHouses
 -- GROUP BY [Building Types]
 ORDER BY 'Price' DESC
