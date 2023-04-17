@@ -103,9 +103,48 @@ GROUP BY [Building Types]
 ORDER BY 'Number of Bedrooms' DESC
 GO
 
-SELECT  Toilets
+-- Building Types by NUmber of Toilets, where number of toilet is 5
+SELECT Toilets, COUNT(Toilets) AS 'Number of Toilets', [Building Types]
 FROM NaijaHouses
+WHERE Toilets = 5
+GROUP BY Toilets, [Building Types]
+ORDER BY 'Number of Toilets' DESC
 GO
+
+-- Building Types by NUmber of Toilets, where number of toilet is 4
+SELECT Toilets, COUNT(Toilets) AS 'Number of Toilets', [Building Types]
+FROM NaijaHouses
+WHERE Toilets = 4
+GROUP BY Toilets, [Building Types]
+ORDER BY 'Number of Toilets' DESC
+GO
+
+-- Building Types by NUmber of Toilets, where number of toilet is 3
+SELECT Toilets, COUNT(Toilets) AS 'Number of Toilets', [Building Types]
+FROM NaijaHouses
+WHERE Toilets = 3
+GROUP BY Toilets, [Building Types]
+ORDER BY 'Number of Toilets' DESC
+GO
+
+-- Building Types by NUmber of Toilets, where number of toilet is 2
+SELECT Toilets, COUNT(Toilets) AS 'Number of Toilets', [Building Types]
+FROM NaijaHouses
+WHERE Toilets = 2
+GROUP BY Toilets, [Building Types]
+ORDER BY 'Number of Toilets' DESC
+GO
+
+-- Building Types by NUmber of Toilets, where number of toilet is 1
+SELECT Toilets, COUNT(Toilets) AS 'Number of Toilets', [Building Types]
+FROM NaijaHouses
+WHERE Toilets = 1
+GROUP BY Toilets, [Building Types]
+ORDER BY 'Number of Toilets' DESC
+GO
+
+
+
 
 -- List of towns with their respective numbers
 SELECT DISTINCT [Town], COUNT([Town]) AS 'Number of Towns'
