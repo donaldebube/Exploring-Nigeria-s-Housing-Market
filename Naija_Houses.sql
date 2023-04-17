@@ -6,14 +6,21 @@ EXEC sp_rename 'NaijaHouses.bedrooms', 'Bedrooms', 'COLUMN';
 EXEC sp_rename 'NaijaHouses.bathrooms', 'Bathrooms', 'COLUMN';
 EXEC sp_rename 'NaijaHouses.toilets', 'Toilets', 'COLUMN';
 EXEC sp_rename 'NaijaHouses.parking_space', 'Parking Space', 'COLUMN';
-EXEC sp_rename 'NaijaHouses.title', 'Title', 'COLUMN';
+EXEC sp_rename 'NaijaHouses.Title', 'Building Types', 'COLUMN';
 EXEC sp_rename 'NaijaHouses.town', 'Town', 'COLUMN';
 EXEC sp_rename 'NaijaHouses.state', 'State', 'COLUMN';
 EXEC sp_rename 'NaijaHouses.price', 'Price', 'COLUMN';
 
+-- Get table
 SELECT TOP 10 *
 FROM NaijaHouses
 GO
+
+-- Get the different building tyoes and the ones that appear 
+SELECT DISTINCT [Building Types], COUNT([Building Types]) AS 'Number of Buildings' 
+FROM NaijaHouses
+GROUP BY [Building Types]
+-- HAVING [Number of Buildings]
 
 -- Number of bedrooms for each category of bedrooms present
 SELECT DISTINCT Bedrooms, COUNT(Bedrooms) AS 'Number of Bedrooms'
