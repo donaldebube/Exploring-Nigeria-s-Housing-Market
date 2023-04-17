@@ -13,6 +13,12 @@ SELECT TOP 10 *
 FROM NaijaHouses
 GO
 
+-- To get list of columns present in the dataset
+SELECT COLUMN_NAME
+FROM INFORMATION_SCHEMA.COLUMNS
+WHERE TABLE_NAME = 'NaijaHouses'
+GO
+
 -- Get the different building tyoes and the ones that appear 
 SELECT DISTINCT [Building Types], COUNT([Building Types]) AS 'Number of Buildings' 
 FROM NaijaHouses
@@ -43,10 +49,10 @@ GO
 SELECT DISTINCT TOP 20 [Building Types], Price
 FROM NaijaHouses
 ORDER BY 'Price' DESC
+GO
 
 -- List of most expensive buildings with their respective locations
 SELECT DISTINCT TOP 20 [Building Types], COUNT(Price) AS 'Price'
 FROM NaijaHouses
 GROUP BY [Building Types]
-
-samuel.davies@zenithbank.com
+ORDER BY 'Price' DESC
