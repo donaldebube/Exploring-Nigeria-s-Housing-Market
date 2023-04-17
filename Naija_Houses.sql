@@ -175,6 +175,12 @@ GROUP BY Toilets, [Building Types]
 ORDER BY 'Number of Toilets' DESC
 GO
 
+SELECT [Parking Space], COUNT([Parking Space]) AS 'Number of Parking Spaces', [Building Types]
+FROM NaijaHouses
+GROUP BY [Parking Space], [Building Types]
+ORDER BY 'Number of Parking Spaces'
+
+
 -- List of towns with their respective numbers
 SELECT DISTINCT [Town], COUNT([Town]) AS 'Number of Towns'
 FROM NaijaHouses
