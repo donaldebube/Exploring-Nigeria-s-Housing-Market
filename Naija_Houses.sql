@@ -1,6 +1,3 @@
-SELECT *
-FROM NaijaHouses
-
 -- Restructure each column title to a format that you understand
 EXEC sp_rename 'NaijaHouses.bedrooms', 'Bedrooms', 'COLUMN';
 EXEC sp_rename 'NaijaHouses.bathrooms', 'Bathrooms', 'COLUMN';
@@ -20,13 +17,28 @@ GO
 SELECT DISTINCT [Building Types], COUNT([Building Types]) AS 'Number of Buildings' 
 FROM NaijaHouses
 GROUP BY [Building Types]
--- HAVING [Number of Buildings]
+ORDER BY 'Number of Buildings'
+
 
 -- Number of bedrooms for each category of bedrooms present
 SELECT DISTINCT Bedrooms, COUNT(Bedrooms) AS 'Number of Bedrooms'
 FROM NaijaHouses
 GROUP BY Bedrooms
 ORDER BY Bedrooms
+
+-- List of towns with their respective numbers
+SELECT DISTINCT [Town], COUNT([Town]) AS 'Number of Towns'
+FROM NaijaHouses
+GROUP BY Town
+ORDER BY 'Number of Towns' DESC
+GO
+
+SELECT Town, COUNT(Town) AS 'Number'
+FROM NaijaHouses
+WHERE Town = 'Magboro'
+GROUP BY Town
+GO
+
 
 SELECT COUNT(bedrooms) AS 'Number of Bedrooms'
 FROM NaijaHouses
@@ -39,7 +51,3 @@ FROM NaijaHouses
 WHERE Bedrooms = 5
 GO
 
-SELECT DISTINCT Title, COUNT(Title) AS 'Total Number'
-FROM NaijaHouses
-GROUP BY Title
-GO
