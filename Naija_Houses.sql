@@ -19,7 +19,6 @@ FROM NaijaHouses
 GROUP BY [Building Types]
 ORDER BY 'Number of Buildings'
 
-
 -- Number of bedrooms for each category of bedrooms present
 SELECT DISTINCT Bedrooms, COUNT(Bedrooms) AS 'Number of Bedrooms'
 FROM NaijaHouses
@@ -31,18 +30,6 @@ SELECT DISTINCT [Town], COUNT([Town]) AS 'Number of Towns'
 FROM NaijaHouses
 GROUP BY Town
 ORDER BY 'Number of Towns' DESC
-GO
-
-SELECT Town, COUNT(Town) AS 'Number'
-FROM NaijaHouses
-WHERE Town = 'Magboro'
-GROUP BY Town
-GO
-
-
-SELECT COUNT(bedrooms) AS 'Number of Bedrooms'
-FROM NaijaHouses
-WHERE Bedrooms = 5
 GO
 
 -- Number of bedrooms (5) category of bedrooms present
