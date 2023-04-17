@@ -103,6 +103,38 @@ GROUP BY [Building Types]
 ORDER BY 'Number of Bedrooms' DESC
 GO
 
+-- Building Types by NUmber of Toilets, where number of toilet is 9
+SELECT Toilets, COUNT(Toilets) AS 'Number of Toilets', [Building Types]
+FROM NaijaHouses
+WHERE Toilets = 9
+GROUP BY Toilets, [Building Types]
+ORDER BY 'Number of Toilets' DESC
+GO
+
+-- Building Types by NUmber of Toilets, where number of toilet is 8
+SELECT Toilets, COUNT(Toilets) AS 'Number of Toilets', [Building Types]
+FROM NaijaHouses
+WHERE Toilets = 8
+GROUP BY Toilets, [Building Types]
+ORDER BY 'Number of Toilets' DESC
+GO
+
+-- Building Types by NUmber of Toilets, where number of toilet is 7
+SELECT Toilets, COUNT(Toilets) AS 'Number of Toilets', [Building Types]
+FROM NaijaHouses
+WHERE Toilets = 7
+GROUP BY Toilets, [Building Types]
+ORDER BY 'Number of Toilets' DESC
+GO
+
+-- Building Types by NUmber of Toilets, where number of toilet is 6
+SELECT Toilets, COUNT(Toilets) AS 'Number of Toilets', [Building Types]
+FROM NaijaHouses
+WHERE Toilets = 6
+GROUP BY Toilets, [Building Types]
+ORDER BY 'Number of Toilets' DESC
+GO
+
 -- Building Types by NUmber of Toilets, where number of toilet is 5
 SELECT Toilets, COUNT(Toilets) AS 'Number of Toilets', [Building Types]
 FROM NaijaHouses
