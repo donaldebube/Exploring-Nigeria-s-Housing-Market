@@ -29,7 +29,23 @@ ORDER BY 'Number of Buildings'
 SELECT DISTINCT Bedrooms, COUNT(Bedrooms) AS 'Number of Bedrooms'
 FROM NaijaHouses
 GROUP BY Bedrooms
-ORDER BY Bedrooms
+ORDER BY 'Number of Bedrooms' DESC
+
+-- Building Types by NUmber of Bedrooms, where number of bedroooms is 5
+SELECT [Building Types], COUNT(Bedrooms) AS 'Number of Bedrooms'
+FROM NaijaHouses
+WHERE Bedrooms = 5
+GROUP BY [Building Types]
+ORDER BY 'Number of Bedrooms' DESC
+GO
+
+-- Building Types by NUmber of Bedrooms, where number of bedroooms is 4
+SELECT [Building Types], COUNT(Bedrooms) AS 'Number of Bedrooms'
+FROM NaijaHouses
+WHERE Bedrooms = 4 
+GROUP BY [Building Types]
+ORDER BY 'Number of Bedrooms' DESC
+GO
 
 -- List of towns with their respective numbers
 SELECT DISTINCT [Town], COUNT([Town]) AS 'Number of Towns'
