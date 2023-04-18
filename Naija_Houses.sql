@@ -202,7 +202,31 @@ ORDER BY 'Price' DESC
 GO
 
 -- List of most expensive buildings with their respective locations
-SELECT DISTINCT TOP 20 [Building Types], COUNT(Price) AS 'Price'
+SELECT 
+(
+    SELECT DISTINCT TOP 20 
+    [Building Types], 
+    Price,
+    -- SUM(Price) AS 'Price', 
+    [State], 
+    Town
 FROM NaijaHouses
-GROUP BY [Building Types]
+-- GROUP BY [Building Types], [State], Town
 ORDER BY 'Price' DESC
+)
+INTO building_info
+FROM NaijaHouses
+GO
+
+SELECT DISTINCT TOP 20
+    [Building Types], 
+    Price,
+    [State], 
+    Town
+INTO building_info
+FROM NaijaHouses
+ORDER BY Price DESC
+
+SELECT *
+FROM building_info
+
