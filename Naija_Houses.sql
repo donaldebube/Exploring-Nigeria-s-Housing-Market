@@ -207,7 +207,7 @@ SELECT
     SELECT DISTINCT TOP 20 
     [Building Types], 
     Price,
-    -- SUM(Price) AS 'Price', 
+    ---- SUM(Price) AS 'Price', 
     [State], 
     Town
 FROM NaijaHouses
