@@ -84,10 +84,16 @@ SET [State] = 'Ogun'
 WHERE Town = 'Arepo'
 GO
 
--- Change Arepo from Anambara to Ogun
+-- Change Gbagada from Anambara to Lagos
 UPDATE NaijaHouses_1
 SET [State] = 'Lagos'
 WHERE Town = 'Gbagada'
+GO
+
+-- Change Guzape District from Anambara to Abuja
+UPDATE NaijaHouses_1
+SET [State] = 'Abuja'
+WHERE Town = 'Guzape District'
 GO
 
 -- To get list of columns present in the dataset
