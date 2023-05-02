@@ -96,6 +96,12 @@ SET [State] = 'Abuja'
 WHERE Town = 'Guzape District'
 GO
 
+-- Change Ibeju Lekki from Anambara to Lagos
+UPDATE NaijaHouses_1
+SET [State] = 'Lagos'
+WHERE Town = 'Ibeju Lekki'
+GO
+
 -- To get list of columns present in the dataset
 SELECT COLUMN_NAME
 FROM INFORMATION_SCHEMA.COLUMNS
