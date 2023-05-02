@@ -52,6 +52,35 @@ SET [State] = 'Lagos'
 WHERE Town = 'Agege'
 GO
 
+-- Duplicate handled for Ajah.
+SELECT *
+FROM NaijaHouses_1
+WHERE Town = 'Ajah' AND [State] = 'Anambara'
+GO
+
+-- Change the column name (State), from Anambara to Lagos 
+UPDATE NaijaHouses_1
+SET [State] = 'Lagos'
+WHERE Town = 'Ajah'
+GO
+
+-- Change Akure from Anambra to Ondo s the state.
+UPDATE NaijaHouses_1
+SET [State] = 'Ondo'
+WHERE Town = 'Akure'
+GO
+
+-- Change Alimosho from Anambara to Lagos
+UPDATE NaijaHouses_1
+SET [State] = 'Lagos'
+WHERE Town = 'Alimosho'
+GO
+
+-- Change Arepo from Anambara to Lagos
+UPDATE NaijaHouses_1
+SET [State] = 'Lagos'
+WHERE Town = 'Alimosho'
+GO
 
 -- To get list of columns present in the dataset
 SELECT COLUMN_NAME
