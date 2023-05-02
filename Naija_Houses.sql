@@ -321,14 +321,14 @@ GO
 
 -- List of states with their respective numbers
 SELECT State, COUNT(State) AS 'Number of Houses'
-FROM NaijaHouses
+FROM NaijaHouses_1
 GROUP BY State
 ORDER BY 'Number of Houses' DESC
 GO
 
 -- List of building types with their respective prices
 SELECT DISTINCT TOP 20 [Building Types], Price
-FROM NaijaHouses
+FROM NaijaHouses_1
 ORDER BY 'Price' DESC
 GO
 
