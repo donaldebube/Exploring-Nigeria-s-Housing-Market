@@ -84,6 +84,12 @@ SET [State] = 'Ogun'
 WHERE Town = 'Arepo'
 GO
 
+-- Change Arepo from Anambara to Ogun
+UPDATE NaijaHouses_1
+SET [State] = 'Lagos'
+WHERE Town = 'Gbagada'
+GO
+
 -- To get list of columns present in the dataset
 SELECT COLUMN_NAME
 FROM INFORMATION_SCHEMA.COLUMNS
