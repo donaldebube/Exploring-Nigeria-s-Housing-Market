@@ -50,6 +50,7 @@ GO
 -- Duplicates found
 SELECT DISTINCT Town, [State]
 FROM NaijaHouses_1
+ORDER BY [State]
 GO
 
 SELECT DISTINCT Town, [State]
@@ -62,29 +63,33 @@ FROM NaijaHouses_1
 WHERE Town = 'Agege' AND [State] = 'Anambara'
 GO
 
+-- Change Owerri Municipal from Anambra to Imo s the state.
+UPDATE NaijaHouses_1
+SET [State] = 'Imo'
+WHERE Town = 'Owerri Municipal'
+GO
+
+-- Change Port Harcourt from Anambra to Rivers the state.
+UPDATE NaijaHouses_1
+SET [State] = 'Rivers'
+WHERE Town = 'Port Harcourt'
+GO
+
 -- Change Akure from Anambra to Ondo s the state.
 UPDATE NaijaHouses_1
 SET [State] = 'Ondo'
 WHERE Town = 'Akure'
 GO
 
--- Change Arepo from Anambara to Ogun
+-- Change the towns that say they are in Anambara to Ogun 
 UPDATE NaijaHouses_1
 SET [State] = 'Ogun'
-WHERE Town = 'Arepo'
-GO
-
--- Change Guzape District from Anambara to Abuja
-UPDATE NaijaHouses_1
-SET [State] = 'Abuja'
-WHERE Town = 'Guzape District'
-GO
-
-
--- Change Gwarinpa from Anambara to Abuja
-UPDATE NaijaHouses_1
-SET [State] = 'Abuja'
-WHERE Town = 'Gwarinpa'
+WHERE Town IN (
+    'Arepo',
+    'Magboro',
+    'Mowe Ofada',
+    'Mowe Town'
+)
 GO
 
 -- Change Ibadan from Anambara to Oyo
@@ -93,12 +98,17 @@ SET [State] = 'Oyo'
 WHERE Town = 'Ibadan'
 GO
 
--- 
 -- Change the towns that say they are in Anambara to Abuja 
 UPDATE NaijaHouses_1
-SET [State] = 'Ogun'
+SET [State] = 'Abuja'
 WHERE Town IN (
-    
+    'Gwarinpa',
+    'Guzape District',
+    'Jabi',
+    'Karu',
+    'Katampe',
+    'Lokogoma District',
+    'Mbora (Nbora)'
 )
 GO
 
@@ -114,6 +124,8 @@ WHERE Town IN (
     'Ifako-Ijaiye',
     'Ikeja',
     'Ikoyi', 
+    'Ikotun',
+    'Ikorodu',
     'Isheri North', 
     'Ketu', 
     'Lekki', 
