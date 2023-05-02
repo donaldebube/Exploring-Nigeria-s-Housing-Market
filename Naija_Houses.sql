@@ -35,13 +35,21 @@ SELECT *
 FROM NaijaHouses_1
 GO
 
+-- Duplicates found
 SELECT DISTINCT Town, [State]
 FROM NaijaHouses_1
 GO
 
+-- Duplicate handled for Agege.
 SELECT *
 FROM NaijaHouses_1
 WHERE Town = 'Agege' AND [State] = 'Anambara'
+GO
+
+-- Change the column name (State), from Anambara to Lagos 
+UPDATE NaijaHouses_1
+SET [State] = 'Lagos'
+WHERE Town = 'Agege'
 GO
 
 
