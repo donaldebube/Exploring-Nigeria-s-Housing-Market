@@ -29,6 +29,12 @@ SELECT *
 FROM NaijaHouses
 GO
 
+-- Get Table
+-- Mew and enhanced table with format
+SELECT *
+FROM NaijaHouses_1
+GO
+
 -- Verify that the count is not being altered
 SELECT COUNT(*)
 FROM NaijaHouses
@@ -36,12 +42,6 @@ GO
 
 -- Verify that the count is not being altered
 SELECT COUNT(*)
-FROM NaijaHouses_1
-GO
-
--- Get Table
--- Mew and enhanced table with format
-SELECT *
 FROM NaijaHouses_1
 GO
 
