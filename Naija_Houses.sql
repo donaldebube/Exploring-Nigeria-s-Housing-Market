@@ -23,7 +23,7 @@ GO
 SELECT DISTINCT [Building Types], COUNT([Building Types]) AS 'Number of Buildings' 
 FROM NaijaHouses
 GROUP BY [Building Types]
-ORDER BY 'Number of Buildings'
+ORDER BY 'Number of Buildings' DESC
 
 -- Number of bedrooms for each category of bedrooms present
 SELECT DISTINCT Bedrooms, COUNT(Bedrooms) AS 'Number of Bedrooms'
