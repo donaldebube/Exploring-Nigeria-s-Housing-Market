@@ -12,7 +12,7 @@ EXEC sp_rename 'NaijaHouses.price', 'Price', 'COLUMN';
 -- Push into new table created
 SELECT  
     [State], 
-    FORMAT(Price, '#,#') AS 'Price',
+    REPLACE(CONVERT(varchar, CAST(Price AS money), 1), '.00', '') AS 'Price',
     [Building Types],
     [Town],
     Bathrooms,
@@ -22,6 +22,9 @@ SELECT
 INTO NaijaHouses_1
 FROM NaijaHouses
 GO
+
+--Drop table
+DROP TABLE [NaijaHouses_1];
 
 -- Get table
 -- Initial table
@@ -145,19 +148,19 @@ GO
 -- Get the different building tyoes and the ones that appear 
 SELECT DISTINCT [Building Types], 
     COUNT([Building Types]) AS 'Number of Buildings For Each Building Type' 
-FROM NaijaHouses
+FROM NaijaHouses_1
 GROUP BY [Building Types]
 ORDER BY 'Number of Buildings For Each Building Type' DESC
 
 -- Number of bedrooms for each category of bedrooms present
 SELECT DISTINCT Bedrooms, COUNT(Bedrooms) AS 'Number of Bedrooms'
-FROM NaijaHouses
+FROM NaijaHouses_1
 GROUP BY Bedrooms
 ORDER BY 'Number of Bedrooms' DESC
 
 -- Building Types by NUmber of Bedrooms, where number of bedroooms is 9
 SELECT [Building Types], COUNT(Bedrooms) AS 'Number of Bedrooms'
-FROM NaijaHouses
+FROM NaijaHouses_1
 WHERE Bedrooms = 9 
 GROUP BY [Building Types]
 ORDER BY 'Number of Bedrooms' DESC
@@ -165,7 +168,7 @@ GO
 
 -- Building Types by NUmber of Bedrooms, where number of bedroooms is 8
 SELECT [Building Types], COUNT(Bedrooms) AS 'Number of Bedrooms'
-FROM NaijaHouses
+FROM NaijaHouses_1
 WHERE Bedrooms = 8 
 GROUP BY [Building Types]
 ORDER BY 'Number of Bedrooms' DESC
@@ -173,7 +176,7 @@ GO
 
 -- Building Types by NUmber of Bedrooms, where number of bedroooms is 7
 SELECT [Building Types], COUNT(Bedrooms) AS 'Number of Bedrooms'
-FROM NaijaHouses
+FROM NaijaHouses_1
 WHERE Bedrooms = 7
 GROUP BY [Building Types]
 ORDER BY 'Number of Bedrooms' DESC
@@ -181,7 +184,7 @@ GO
 
 -- Building Types by NUmber of Bedrooms, where number of bedroooms is 6
 SELECT [Building Types], COUNT(Bedrooms) AS 'Number of Bedrooms'
-FROM NaijaHouses
+FROM NaijaHouses_1
 WHERE Bedrooms = 6
 GROUP BY [Building Types]
 ORDER BY 'Number of Bedrooms' DESC
@@ -189,7 +192,7 @@ GO
 
 -- Building Types by NUmber of Bedrooms, where number of bedroooms is 5
 SELECT [Building Types], COUNT(Bedrooms) AS 'Number of Bedrooms'
-FROM NaijaHouses
+FROM NaijaHouses_1
 WHERE Bedrooms = 5
 GROUP BY [Building Types]
 ORDER BY 'Number of Bedrooms' DESC
@@ -197,7 +200,7 @@ GO
 
 -- Building Types by NUmber of Bedrooms, where number of bedroooms is 4
 SELECT [Building Types], COUNT(Bedrooms) AS 'Number of Bedrooms'
-FROM NaijaHouses
+FROM NaijaHouses_1
 WHERE Bedrooms = 4 
 GROUP BY [Building Types]
 ORDER BY 'Number of Bedrooms' DESC
@@ -205,7 +208,7 @@ GO
 
 -- Building Types by NUmber of Bedrooms, where number of bedroooms is 3
 SELECT [Building Types], COUNT(Bedrooms) AS 'Number of Bedrooms'
-FROM NaijaHouses
+FROM NaijaHouses_1
 WHERE Bedrooms = 3
 GROUP BY [Building Types]
 ORDER BY 'Number of Bedrooms' DESC
@@ -213,7 +216,7 @@ GO
 
 -- Building Types by NUmber of Bedrooms, where number of bedroooms is 2
 SELECT [Building Types], COUNT(Bedrooms) AS 'Number of Bedrooms'
-FROM NaijaHouses
+FROM NaijaHouses_1
 WHERE Bedrooms = 2
 GROUP BY [Building Types]
 ORDER BY 'Number of Bedrooms' DESC
@@ -221,7 +224,7 @@ GO
 
 -- Building Types by NUmber of Bedrooms, where number of bedroooms is 1
 SELECT [Building Types], COUNT(Bedrooms) AS 'Number of Bedrooms'
-FROM NaijaHouses
+FROM NaijaHouses_1
 WHERE Bedrooms = 1
 GROUP BY [Building Types]
 ORDER BY 'Number of Bedrooms' DESC
@@ -229,7 +232,7 @@ GO
 
 -- Building Types by NUmber of Toilets, where number of toilet is 9
 SELECT COUNT(Toilets) AS 'Number of Toilets', [Building Types]
-FROM NaijaHouses
+FROM NaijaHouses_1
 WHERE Toilets = 9
 GROUP BY Toilets, [Building Types]
 ORDER BY 'Number of Toilets' DESC
@@ -237,7 +240,7 @@ GO
 
 -- Building Types by NUmber of Toilets, where number of toilet is 8
 SELECT COUNT(Toilets) AS 'Number of Toilets', [Building Types]
-FROM NaijaHouses
+FROM NaijaHouses_1
 WHERE Toilets = 8
 GROUP BY Toilets, [Building Types]
 ORDER BY 'Number of Toilets' DESC
@@ -245,7 +248,7 @@ GO
 
 -- Building Types by NUmber of Toilets, where number of toilet is 7
 SELECT Toilets, COUNT(Toilets) AS 'Number of Toilets', [Building Types]
-FROM NaijaHouses
+FROM NaijaHouses_1
 WHERE Toilets = 7
 GROUP BY Toilets, [Building Types]
 ORDER BY 'Number of Toilets' DESC
@@ -253,7 +256,7 @@ GO
 
 -- Building Types by NUmber of Toilets, where number of toilet is 6
 SELECT Toilets, COUNT(Toilets) AS 'Number of Toilets', [Building Types]
-FROM NaijaHouses
+FROM NaijaHouses_1
 WHERE Toilets = 6
 GROUP BY Toilets, [Building Types]
 ORDER BY 'Number of Toilets' DESC
@@ -261,7 +264,7 @@ GO
 
 -- Building Types by NUmber of Toilets, where number of toilet is 5
 SELECT Toilets, COUNT(Toilets) AS 'Number of Toilets', [Building Types]
-FROM NaijaHouses
+FROM NaijaHouses_1
 WHERE Toilets = 5
 GROUP BY Toilets, [Building Types]
 ORDER BY 'Number of Toilets' DESC
@@ -269,7 +272,7 @@ GO
 
 -- Building Types by NUmber of Toilets, where number of toilet is 4
 SELECT Toilets, COUNT(Toilets) AS 'Number of Toilets', [Building Types]
-FROM NaijaHouses
+FROM NaijaHouses_1
 WHERE Toilets = 4
 GROUP BY Toilets, [Building Types]
 ORDER BY 'Number of Toilets' DESC
@@ -277,7 +280,7 @@ GO
 
 -- Building Types by NUmber of Toilets, where number of toilet is 3
 SELECT Toilets, COUNT(Toilets) AS 'Number of Toilets', [Building Types]
-FROM NaijaHouses
+FROM NaijaHouses_1
 WHERE Toilets = 3
 GROUP BY Toilets, [Building Types]
 ORDER BY 'Number of Toilets' DESC
@@ -285,7 +288,7 @@ GO
 
 -- Building Types by NUmber of Toilets, where number of toilet is 2
 SELECT Toilets, COUNT(Toilets) AS 'Number of Toilets', [Building Types]
-FROM NaijaHouses
+FROM NaijaHouses_1
 WHERE Toilets = 2
 GROUP BY Toilets, [Building Types]
 ORDER BY 'Number of Toilets' DESC
@@ -293,7 +296,7 @@ GO
 
 -- Building Types by NUmber of Toilets, where number of toilet is 1
 SELECT Toilets, COUNT(Toilets) AS 'Number of Toilets', [Building Types]
-FROM NaijaHouses
+FROM NaijaHouses_1
 WHERE Toilets = 1
 GROUP BY Toilets, [Building Types]
 ORDER BY 'Number of Toilets' DESC
@@ -301,7 +304,7 @@ GO
 
 SELECT DISTINCT [Parking Space], COUNT([Parking Space]) AS 'Number of Parking Spaces'
     -- [Building Types]
-FROM NaijaHouses
+FROM NaijaHouses_1
 GROUP BY [Parking Space], [Building Types]
 ORDER BY 'Number of Parking Spaces' DESC
 GO
@@ -309,14 +312,14 @@ GO
 
 -- List of towns with their respective numbers
 SELECT DISTINCT [Town], COUNT([Town]) AS 'Number of Towns'
-FROM NaijaHouses
+FROM NaijaHouses_1
 GROUP BY Town
 ORDER BY 'Number of Towns' DESC
 GO
 
 -- To get the total number of towns present in the dataset
 SELECT COUNT(DISTINCT Town) AS 'Number of Towns'
-FROM NaijaHouses
+FROM NaijaHouses_1
 GO
 
 -- List of states with their respective numbers
@@ -327,9 +330,19 @@ ORDER BY 'Number of Houses' DESC
 GO
 
 -- List of building types with their respective prices
-SELECT DISTINCT TOP 20 [Building Types], Price
+SELECT TOP 20 [Building Types], Price
 FROM NaijaHouses_1
-ORDER BY 'Price' DESC
+ORDER BY 'Price'
+GO
+
+SELECT *
+FROM NaijaHouses_1
+ORDER BY Price
+GO
+
+SELECT *
+FROM NaijaHouses
+ORDER BY Price
 GO
 
 -- List of most expensive buildings with their respective locations
