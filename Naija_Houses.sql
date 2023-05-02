@@ -35,6 +35,8 @@ SELECT *
 FROM NaijaHouses_1
 GO
 
+-- CLEANING OF DATASET
+
 -- Duplicates found
 SELECT DISTINCT Town, [State]
 FROM NaijaHouses_1
