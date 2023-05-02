@@ -52,22 +52,14 @@ SELECT DISTINCT Town, [State]
 FROM NaijaHouses_1
 GO
 
+SELECT DISTINCT Town, [State]
+FROM NaijaHouses
+GO
+
 -- Duplicate handled for Agege.
 SELECT *
 FROM NaijaHouses_1
 WHERE Town = 'Agege' AND [State] = 'Anambara'
-GO
-
--- Change the column name (State), from Anambara to Lagos 
-UPDATE NaijaHouses_1
-SET [State] = 'Lagos'
-WHERE Town = 'Agege'
-GO
-
--- Duplicate handled for Ajah.
-SELECT *
-FROM NaijaHouses_1
-WHERE Town = 'Ajah' AND [State] = 'Anambara'
 GO
 
 -- Change Akure from Anambra to Ondo s the state.
@@ -99,6 +91,15 @@ GO
 UPDATE NaijaHouses_1
 SET [State] = 'Oyo'
 WHERE Town = 'Ibadan'
+GO
+
+-- 
+-- Change the towns that say they are in Anambara to Abuja 
+UPDATE NaijaHouses_1
+SET [State] = 'Ogun'
+WHERE Town IN (
+    
+)
 GO
 
 -- Change the towns that say they are in Anambara to Lagos 
