@@ -8,10 +8,29 @@ EXEC sp_rename 'NaijaHouses.town', 'Town', 'COLUMN';
 EXEC sp_rename 'NaijaHouses.state', 'State', 'COLUMN';
 EXEC sp_rename 'NaijaHouses.price', 'Price', 'COLUMN';
 
--- Get table
-SELECT TOP 10 *
+-- Use the Format function to change transform the price column appropraitely.
+-- Push into new table created
+SELECT  
+    [State], 
+    FORMAT(Price, '#,#') AS 'Price',
+    [Building Types],
+    [Town],
+    Bathrooms,
+    Bedrooms,
+    Toilets,
+    [Parking Space]
+INTO NaijaHouses_1
 FROM NaijaHouses
 GO
+
+-- Get table
+--
+SELECT *
+FROM NaijaHouses
+GO
+
+
+
 
 -- To get list of columns present in the dataset
 SELECT COLUMN_NAME
@@ -226,15 +245,42 @@ INTO building_info
 FROM NaijaHouses
 GO
 
-SELECT DISTINCT TOP 20
+SELECT TOP 20
     [Building Types], 
-    Price,
+    (FORMAT(Price, '#,#')) AS 'Price',
     [State], 
     Town
 INTO building_info
 FROM NaijaHouses
 ORDER BY Price DESC
+GO
+
+SELECT TOP 20
+    [Building Types], 
+    ROUND(FORMAT(Price, '#,#'), 3) AS 'Price',
+    [State], 
+    Town
+INTO building_info
+FROM NaijaHouses
+ORDER BY Price DESC
+GO
+
+SELECT TOP 20
+    [Building Types], 
+    Price,
+    [State], 
+    Town
+INTO building_info_1
+FROM NaijaHouses
+ORDER BY Price DESC
+GO
+
+SELECT *
+FROM building_info_1
+GO
 
 SELECT *
 FROM building_info
+
+DROP TABLE building_info_1
 
