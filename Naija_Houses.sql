@@ -76,10 +76,10 @@ SET [State] = 'Lagos'
 WHERE Town = 'Alimosho'
 GO
 
--- Change Arepo from Anambara to Lagos
+-- Change Arepo from Anambara to Ogun
 UPDATE NaijaHouses_1
-SET [State] = 'Lagos'
-WHERE Town = 'Alimosho'
+SET [State] = 'Ogun'
+WHERE Town = 'Arepo'
 GO
 
 -- To get list of columns present in the dataset
