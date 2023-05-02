@@ -29,6 +29,16 @@ SELECT *
 FROM NaijaHouses
 GO
 
+-- Verify that the count is not being altered
+SELECT COUNT(*)
+FROM NaijaHouses
+GO
+
+-- Verify that the count is not being altered
+SELECT COUNT(*)
+FROM NaijaHouses_1
+GO
+
 -- Get Table
 -- Mew and enhanced table with format
 SELECT *
@@ -100,6 +110,12 @@ GO
 UPDATE NaijaHouses_1
 SET [State] = 'Lagos'
 WHERE Town = 'Ibeju Lekki'
+GO
+
+-- Change Ifako-Ijaiye from Anambara to Lagos
+UPDATE NaijaHouses_1
+SET [State] = 'Lagos'
+WHERE Town = 'Ifako-Ijaiye'
 GO
 
 -- To get list of columns present in the dataset
