@@ -189,10 +189,10 @@ ORDER BY 'Number of Towns' DESC
 GO
 
 -- List of states with their respective numbers
-SELECT State, COUNT(State) AS 'Number of States'
+SELECT State, COUNT(State) AS 'Number of Houses'
 FROM NaijaHouses
 GROUP BY State
-ORDER BY 'Number of States' DESC
+ORDER BY 'Number of Houses' DESC
 GO
 
 -- List of building types with their respective prices
