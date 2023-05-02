@@ -20,10 +20,11 @@ WHERE TABLE_NAME = 'NaijaHouses'
 GO
 
 -- Get the different building tyoes and the ones that appear 
-SELECT DISTINCT [Building Types], COUNT([Building Types]) AS 'Number of Buildings' 
+SELECT DISTINCT [Building Types], 
+    COUNT([Building Types]) AS 'Number of Buildings For Each Building Type' 
 FROM NaijaHouses
 GROUP BY [Building Types]
-ORDER BY 'Number of Buildings' DESC
+ORDER BY 'Number of Buildings For Each Building Type' DESC
 
 -- Number of bedrooms for each category of bedrooms present
 SELECT DISTINCT Bedrooms, COUNT(Bedrooms) AS 'Number of Bedrooms'
