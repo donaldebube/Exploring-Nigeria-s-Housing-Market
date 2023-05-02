@@ -176,10 +176,12 @@ GROUP BY Toilets, [Building Types]
 ORDER BY 'Number of Toilets' DESC
 GO
 
-SELECT [Parking Space], COUNT([Parking Space]) AS 'Number of Parking Spaces', [Building Types]
+SELECT DISTINCT [Parking Space], COUNT([Parking Space]) AS 'Number of Parking Spaces'
+    -- [Building Types]
 FROM NaijaHouses
 GROUP BY [Parking Space], [Building Types]
-ORDER BY 'Number of Parking Spaces'
+ORDER BY 'Number of Parking Spaces' DESC
+GO
 
 
 -- List of towns with their respective numbers
@@ -187,6 +189,11 @@ SELECT DISTINCT [Town], COUNT([Town]) AS 'Number of Towns'
 FROM NaijaHouses
 GROUP BY Town
 ORDER BY 'Number of Towns' DESC
+GO
+
+-- To get the total number of towns present in the dataset
+SELECT COUNT(DISTINCT Town) AS 'Number of Towns'
+FROM NaijaHouses
 GO
 
 -- List of states with their respective numbers
