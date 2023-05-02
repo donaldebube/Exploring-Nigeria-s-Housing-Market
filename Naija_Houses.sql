@@ -24,12 +24,16 @@ FROM NaijaHouses
 GO
 
 -- Get table
---
+-- Initial table
 SELECT *
 FROM NaijaHouses
 GO
 
-
+-- Get Table
+-- Mew and enhanced table with format
+SELECT *
+FROM NaijaHouses_1
+GO
 
 
 -- To get list of columns present in the dataset
