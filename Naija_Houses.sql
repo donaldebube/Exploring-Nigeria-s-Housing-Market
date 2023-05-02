@@ -35,6 +35,15 @@ SELECT *
 FROM NaijaHouses_1
 GO
 
+SELECT DISTINCT Town, [State]
+FROM NaijaHouses_1
+GO
+
+SELECT *
+FROM NaijaHouses_1
+WHERE Town = 'Agege' AND [State] = 'Anambara'
+GO
+
 
 -- To get list of columns present in the dataset
 SELECT COLUMN_NAME
