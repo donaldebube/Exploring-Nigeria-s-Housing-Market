@@ -70,22 +70,10 @@ FROM NaijaHouses_1
 WHERE Town = 'Ajah' AND [State] = 'Anambara'
 GO
 
--- Change the column name (State), from Anambara to Lagos 
-UPDATE NaijaHouses_1
-SET [State] = 'Lagos'
-WHERE Town = 'Ajah'
-GO
-
 -- Change Akure from Anambra to Ondo s the state.
 UPDATE NaijaHouses_1
 SET [State] = 'Ondo'
 WHERE Town = 'Akure'
-GO
-
--- Change Alimosho from Anambara to Lagos
-UPDATE NaijaHouses_1
-SET [State] = 'Lagos'
-WHERE Town = 'Alimosho'
 GO
 
 -- Change Arepo from Anambara to Ogun
@@ -94,28 +82,45 @@ SET [State] = 'Ogun'
 WHERE Town = 'Arepo'
 GO
 
--- Change Gbagada from Anambara to Lagos
-UPDATE NaijaHouses_1
-SET [State] = 'Lagos'
-WHERE Town = 'Gbagada'
-GO
-
 -- Change Guzape District from Anambara to Abuja
 UPDATE NaijaHouses_1
 SET [State] = 'Abuja'
 WHERE Town = 'Guzape District'
 GO
 
--- Change Ibeju Lekki from Anambara to Lagos
+
+-- Change Gwarinpa from Anambara to Abuja
 UPDATE NaijaHouses_1
-SET [State] = 'Lagos'
-WHERE Town = 'Ibeju Lekki'
+SET [State] = 'Abuja'
+WHERE Town = 'Gwarinpa'
 GO
 
--- Change Ifako-Ijaiye from Anambara to Lagos
+-- Change Ibadan from Anambara to Oyo
+UPDATE NaijaHouses_1
+SET [State] = 'Oyo'
+WHERE Town = 'Ibadan'
+GO
+
+-- Change the towns that say they are in Anambara to Lagos 
 UPDATE NaijaHouses_1
 SET [State] = 'Lagos'
-WHERE Town = 'Ifako-Ijaiye'
+WHERE Town IN (
+    'Agege',
+    'Ajah',
+    'Alimosho',
+    'Gbagada',
+    'Ibeju Lekki',
+    'Ifako-Ijaiye',
+    'Ikeja',
+    'Ikoyi', 
+    'Isheri North', 
+    'Ketu', 
+    'Lekki', 
+    'Ojo', 
+    'Shomolu', 
+    'Victoria Island (VI)',
+    'Yaba'
+)
 GO
 
 -- To get list of columns present in the dataset
