@@ -38,6 +38,7 @@ SELECT *
 FROM NaijaHouses_1
 GO
 
+
 -- Verify that the count is not being altered
 SELECT COUNT(*)
 FROM NaijaHouses
@@ -332,17 +333,6 @@ GO
 -- List of building types with their respective prices
 SELECT TOP 20 [Building Types], Price
 FROM NaijaHouses_1
-ORDER BY 'Price'
-GO
-
-SELECT *
-FROM NaijaHouses_1
-ORDER BY Price
-GO
-
-SELECT *
-FROM NaijaHouses
-ORDER BY Price
 GO
 
 -- List of most expensive buildings with their respective locations
