@@ -57,8 +57,16 @@ FROM NaijaHouses_1
 ORDER BY [State]
 GO
 
+SELECT DISTINCT State, COUNT(Town)
+FROM NaijaHouses_1
+GROUP BY State
+ORDER BY State
+GO
+
+
+
 SELECT DISTINCT Town, [State]
-FROM NaijaHouses
+FROM NaijaHouses_1
 GO
 
 -- Duplicate handled for Agege.
