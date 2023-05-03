@@ -378,8 +378,7 @@ SELECT TOP 20
     [State], 
     Town
 INTO building_info_1
-FROM NaijaHouses
-ORDER BY Price DESC
+FROM NaijaHouses_1
 GO
 
 SELECT *
@@ -389,5 +388,6 @@ GO
 SELECT *
 FROM building_info
 
-DROP TABLE building_info_1
+-- -- To drop table
+-- DROP TABLE building_info_1
 
