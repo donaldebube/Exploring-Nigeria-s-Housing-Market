@@ -66,7 +66,18 @@ GO
 
 -- Table used to locate duplicate values
 SELECT DISTINCT Town, [State]
+FROM NaijaHouses_01
+GO
+
+
+SELECT *
+FROM NaijaHouses_01
+WHERE [State] = 'Anambara'
+GO
+
+SELECT *
 FROM NaijaHouses
+WHERE [State] = 'Anambara'
 GO
 
 -- Duplicate handled for Agege.
@@ -154,18 +165,23 @@ FROM INFORMATION_SCHEMA.COLUMNS
 WHERE TABLE_NAME = 'NaijaHouses'
 GO
 
+
+-- Insights
+
 -- Get the different building tyoes and the ones that appear 
 SELECT DISTINCT [Building Types], 
     COUNT([Building Types]) AS 'Number of Buildings For Each Building Type' 
 FROM NaijaHouses
 GROUP BY [Building Types]
 ORDER BY 'Number of Buildings For Each Building Type' DESC
+GO
 
 -- Number of bedrooms for each category of bedrooms present
 SELECT DISTINCT Bedrooms, COUNT(Bedrooms) AS 'Number of Bedrooms'
 FROM NaijaHouses
 GROUP BY Bedrooms
 ORDER BY 'Number of Bedrooms' DESC
+GO
 
 -- Building Types by NUmber of Bedrooms, where number of bedroooms is 9
 SELECT [Building Types], COUNT(Bedrooms) AS 'Number of Bedrooms'
